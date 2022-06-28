@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    {% load static %}
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="{% static "css/main.css" %} " rel="stylesheet">
+        
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  fixed-top"menu" scr="">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src= "{% static "img/logo.jpg" %} " href="index.html" width="40px" height="40px" class="rounded-pill"> 
+            <span><strong>Cheems Market</strong></span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ol class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tienda.html">Tienda</a>           
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="donaciones.html">Donaciones</a>           
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>           
+              </li>
+            </ol>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+        <body class="conteimner fluid" background="{% static "img/background_04.jpg" %} ">
+            <div class="row">
+                <h1>Listado de Personas que enviaron formulario de contacto</h1>
+            </div>
+            <form action="" method="post" enctype="multipart/form-data bg-light"> 
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>Cod Formulario</td>
+                            <td>Nombre </td>
+                            <td>Apellido</td>
+                            <td>Correo Electronico</td>
+                            <td>Telefono</td>
+                            <td>Direccion </td>
+                            <td>Region Producto</td>
+                            <td>Comuna</td>
+                        </tr>
+                    </thead></form>
+                    {% for c  in contactos %}
+                    <tbody>
+                        <tr>
+                            <td>{{ c.codFormu }}</td>
+                            <td>{{ c.nombreF }}</td>
+                            <td>{{ c.apellidoF }}</td>
+                            <td>{{ c.mailF }}</td>
+                            <td>{{ c.phoneF }}</td>
+                            <td>{{ c.direccionF}}</td>
+                            <td>{{ c.direccionF}}</td>
+                            <td>{{ c.comunaF}}</td>
+
+                            
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+                <a href="/administrador">Volver Administrador</a>
+            </div>
+            <!--agregar opciones de fundaciones-->
+
+            
+        
+    </body>
+</html>
