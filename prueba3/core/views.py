@@ -19,6 +19,9 @@ def inicio(request):
 
 def nosotros(request):
     return render(request, 'core/nosotros.html')
+
+def login(request):
+    return render(request, 'core/login.html')
     
 
 def tienda(request):

@@ -1,0 +1,32 @@
+    {%  extends 'core/index.html' %}
+    {% load static %}
+    {% block contenido %}
+    
+    <div class="wrapper">
+        <div class="text-center mt-4 name">
+            <h1>Bienvenido A Chems Market</h1>
+        </div>
+        <form class="p-3 mt-3 bg" >
+            <div class="form-field d-flex align-items-center justify-content-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="userName" id="userName" placeholder="Usuario">
+            </div>
+            <br>
+            <div class="form-field d-flex align-items-center justify-content-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Contraseña">
+            </div>
+            <div align="center">
+            <button class="btn-primary mt-3 ">Ingresar</button>
+            <br>
+        </form>
+        <div class="text-center fs-6">
+            <a href="#">Olvide mi contraseña</a> or <a href="{% url 'registrarse' %}">Registrate</a>
+        </div>
+    </div>
+        <div align="center">
+            <img src= "{% static "img/logo.jpg" %}" alt="" id="logo" >
+        </div>
+        
+    
+      {% endblock %}

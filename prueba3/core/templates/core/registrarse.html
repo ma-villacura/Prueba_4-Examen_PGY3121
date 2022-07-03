@@ -1,12 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrarse</title>
-</head>
-<body>
+{%  extends 'core/index.html' %}
+{% load static %}
+{% block contenido %}
     
-</body>
-</html>
+    <!--FORMULARIO-->
+    <h1 class="display-5 bg- text-center text-black p-6"  ><strong class="justify-content-center">Registrate</strong><br></h1>
+    <p class="text-success text-center d-flex justify-content-center fs-5 bg-light">Completa el siguiente formulario para ser parte de nuestra comunidad</p> 
+</script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/localization/messages_es.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div>
+    <form id="basic-form" action="" class="formulario" id="formulario" method="post">
+      {% csrf_token %}
+      <div class="formulario__grupo" id="grupo__nombreF">
+        <label for="nombreF" class="formulario__label">Nombre</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Campo obligatorio">
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div></div>
+      <div class="formulario__grupo" id="grupo__apellidoF">
+        <label for="apellidoF" class="formulario__label">Apellido</label>
+        <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Campo obligatorio">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div></div>
+        <div class="formulario__grupo" id="grupo__mailF">
+          <label for="mailF" class="formulario__label">Correo Electrónico</label>
+          <div class="formulario__grupo-input">
+              <input type="email" class="formulario__input" name="correo" id="correo" placeholder="a@a.cl">
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div></div>
+          <div class="formulario__grupo" id="grupo__phoneF">
+            <label for="phoneF" class="formulario__label">Teléfono</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="980203020">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+        </div>
+        <div class="formulario__grupo" id="grupo__direccionF">
+          <label for="direccionF" class="formulario__label">Direccion</label>
+          <div class="formulario__grupo-input">
+              <input type="text" class="formulario__input" name="direccion" id="direccion"
+                  placeholder="Calle o pasaje número">
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div></div>
+      
+        <div class="formulario__grupo">
+          <label for="ddlRegion identificacion" class="formulario__label">Selecciona Región</label>
+          <div class="formulario__grupo-input">
+              <p id="region"></p>
+          </div>
+      </div>
+      <div class="formulario__grupo">
+        <label for="ddlRegion " class="formulario__label">Selecciona Comuna</label>
+        <div class="formulario__grupo-input">
+            <p id="comuna"></p>
+        </div></div>
+      <div class="formulario__grupo formulario__grupo-btn-enviar">
+          <button type="submit" class="formulario__btn">Enviar</button>
+      </div>
+    
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+          <script src="{% static 'js/ValidacionF.js' %}"></script>
+          <script src="{% static 'js/Regiones.js' %}"></script>
+   
+          
+          {{mensaje}}
+  </form>
+  {% endblock %}

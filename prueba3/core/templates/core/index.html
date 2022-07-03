@@ -15,21 +15,9 @@
   </head>
   <body class="conteimner fluid" background="{% static "img/background_04.jpg" %} ">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!--Encabezado-->
-    <header class="conteiner-fluid bg-success fs-6 d-flex justify-content-center mb-2 fixed-top ">
-      <div class="topnav p-1">
-          <form action="">
-            <input class="text-center"  type="text" placeholder="Usuario" name="username">
-            <input class="text-center "type="password" placeholder="Contraseña" name="psw">
-            <button type="button" class="btn btn-warning p-1 mb-1">Ingresar</button>
-          </form>
-        </div>
-      </header>
 
-      
-  
     <!--Barra de navegacion-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 mt-5 fixed-top"menu" scr="">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 mt-0 fixed-top"menu" scr="">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
               <img src= "{% static "img/logo.jpg" %} " href="index.html" width="40px" height="40px" class="rounded-pill"> 
@@ -60,8 +48,7 @@
               </li>
             </ol>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
+              <a href="{% url 'login' %}" class="btn btn-success">Ingresar</a>
             </form>
           </div>
         </div>
