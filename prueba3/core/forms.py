@@ -2,7 +2,7 @@ from pyexpat import model
 
 from django import forms
 from django.forms import ModelForm
-from .models import Fundacion, Producto
+from .models import Fundacion, Producto, Usuario
 from .models import Contacto
 
 class ProductoForm(ModelForm):
@@ -27,3 +27,7 @@ class FundacionForm(ModelForm):
         model = Fundacion
         #fields ['nomFundacion', 'nomFundacion', 'descFundacion' , 'dirFundacion ', 'telFundacion', 'mailFundacion',','imgFundacion' ]
         fields = "__all__"
+
+class ProductoForm(ModelForm):
+    model = Usuario
+    field ="__all__"
