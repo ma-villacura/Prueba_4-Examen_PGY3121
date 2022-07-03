@@ -60,9 +60,9 @@ class Fundacion(models.Model):
     
 class Usuario(models.Model):
     codUser = models.AutoField(primary_key=True, verbose_name="Codigo Usuario")
-    nombre = models.CharField(max_length=50,verbose_name="Nombre Persona")
-    apellido = models.CharField(max_length=50,verbose_name="Apellido Persona")
-    mailUser = models.EmailField(verbose_name="Mail Persona")
+    nombre = models.CharField(max_length=50,verbose_name="Nombre")
+    apellido = models.CharField(max_length=50,verbose_name="Apellido ")
+    mailUser = models.EmailField(verbose_name="Correo Electronico")
     telefono = models.IntegerField(verbose_name="Telefono User")
     nombreUser = models.CharField(max_length=50, verbose_name="Nombre de Usuario")
     passUser = models.CharField(max_length=50,verbose_name="Contraseña Usuario")

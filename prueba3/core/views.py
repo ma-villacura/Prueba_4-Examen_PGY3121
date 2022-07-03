@@ -1,6 +1,7 @@
 from core.forms import ProductoForm 
 from core.forms import FundacionForm
-from .models import Producto, Contacto , Fundacion
+from core.forms import UsuarioForm
+from .models import Producto, Contacto , Fundacion, Usuario
 from django.shortcuts import render, redirect  
 from distutils.command.upload import upload
 from asyncio.windows_events import NULL
@@ -59,7 +60,18 @@ def donaciones(request):
     return render(request, 'core/donaciones.html', data)
 
 def registrarse(request):
-    return render(request, 'core/registrarse.html')
+    context = { 
+        'form': UsuarioForm()
+    }
+    if request.method == 'POST':
+        formulario = UsuarioForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            context["mensaje"]= "Usuario creado exitosamente"
+        else:
+            context["form"] = formulario 
+
+    return render(request, 'core/registrarse.html', context)
 
 #VISTAS DE ADMINISTRADOR PRODUCTOS  
 

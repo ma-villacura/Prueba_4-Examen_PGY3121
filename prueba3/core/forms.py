@@ -28,6 +28,7 @@ class FundacionForm(ModelForm):
         #fields ['nomFundacion', 'nomFundacion', 'descFundacion' , 'dirFundacion ', 'telFundacion', 'mailFundacion',','imgFundacion' ]
         fields = "__all__"
 
-class ProductoForm(ModelForm):
-    model = Usuario
-    field ="__all__"
+class UsuarioForm(ModelForm):
+    class Meta:
+        model = Usuario
+        fields ="__all__"
