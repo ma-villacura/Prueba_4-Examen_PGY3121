@@ -12,6 +12,9 @@ from .forms import ContactoForm
 
 # Vistas Secciones 
 def index(request):
+    return render(request, 'core/inicio.html')
+
+def inicio(request):
     return render(request, 'core/index.html')
 
 def nosotros(request):
@@ -19,6 +22,7 @@ def nosotros(request):
     
 
 def tienda(request):
+    
     Productos = Producto.objects.all()
 
     data={
@@ -51,6 +55,8 @@ def donaciones(request):
 
     return render(request, 'core/donaciones.html', data)
 
+def registrarse(request):
+    return render(request, 'core/registrarse.html')
 
 #VISTAS DE ADMINISTRADOR PRODUCTOS  
 

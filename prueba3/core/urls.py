@@ -1,5 +1,5 @@
 from django.urls import path 
-from .views import eliminar_prod, index,nosotros, tienda, contacto, donaciones, administrador,agregar_prod,modificar_prod,lista_personas, agregar_fundacion, admin_fund,modificar_fundacion,eliminar_fundacion 
+from .views import eliminar_prod, index,nosotros, tienda, contacto, donaciones, administrador,agregar_prod,modificar_prod,lista_personas, agregar_fundacion, admin_fund,modificar_fundacion,eliminar_fundacion, registrarse
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -18,6 +18,7 @@ urlpatterns = [
     path('admin_fund',admin_fund,name="admin_fund"),
     path('modificar_fundacion',modificar_fundacion,name="modificar_fundacion"),
     path('eliminar_fundacion',eliminar_fundacion ,name="eliminar_fundacion "),
+    path('registrarse',registrarse ,name="registrarse"),
     ]
 
 if settings.DEBUG:

@@ -26,11 +26,7 @@
         </div>
       </header>
 
-      <div class="welcome">
-        <h1 class="display-5 bg- text-center text-light p-4 fs-1 bg-success">Bienvenido a Cheems Market</h1>
-        <img src="{% static 'img/logo.jpg' %}" id="logo" >
-        <h1 class="text-dark d-flex justify-content-center fs-2 mt-2 bg- p-2">"Nosotros tambien amamos a los animales"</h1>
-      </div>
+      
   
     <!--Barra de navegacion-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 mt-5 fixed-top"menu" scr="">
@@ -48,16 +44,19 @@
                 <a class="nav-link" href="{% url 'index' %}">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="tienda.html">Tienda</a>           
+                <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>           
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="donaciones.html">Donaciones</a>           
+                <a class="nav-link" href="{% url 'donaciones' %}">Donaciones</a>           
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>           
+                <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>           
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'registrarse' %}">Registrarse</a>           
               </li>
             </ol>
             <form class="d-flex">
@@ -68,131 +67,12 @@
         </div>
       </nav>
       
-      
+  <div id="contenido">
+    {% block contenido %}
+    {% endblock %}
 
-      <!--CARROUSEL-->
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <center> 
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <a title="Nosotros" href="nosotros.html"><img src="{% static "img/nosotros_02.jpg" %} " alt="Nosotros"></a>
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Nosotros</h5>
-              <p>Somos una tienda sin fines de lucro, el cual el total de las ventas las donamos a fundaciones de animalitos</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <a title="Tienda" href="tienda.html"><img src="{% static "img/perro_gato_01.jpg" %} " alt="Tienda"></a>
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-light"><strong>Tienda</strong></h5>
-              <p class="text-light"><strong>Todo los accesorios que necesites para tu mascota</strong> </p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <a title="Donaciones" href="donaciones.html"><img src= "{% static "img/donaciones_01.jpg" %} " alt="Donaciones"></a>
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-light"><Strong>Donaciones</Strong></h5>
-              <p class="text-light"><strong>Todo aporte voluntario es bienvenido, los animalitos te lo agraderan</strong></p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <a title="Contacto" href="contacto.html"><img src="{% static "img/contactanos_01.jpg" %}" alt="Contacto"></a>
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-black"><Strong>Contacto</Strong></h5>
-              <p>Si tienes alguna duda o consulta no dudes en llamarnos </p>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visuallys">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually">Siguiente</span>
-        </button>
-      </div>
-      <br>
-    </center> 
-      <!--CARDS-->
-      <h1 class="display-5 bg- text-center text-black p-6""><strong class="justify-content-center">Novedades</strong> </h1>
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-          <div class="card">
-            <img src="{% static "img/bandana_01.jpeg" %} " class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Bandana Perruna</h5>
-              <p class="card-text"><small>Bandana para perros</small></p>
-              <p class="card-text"><small>Stock Disponible <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z"></path></svg></small></p>
-              <a class="btn btn-success btn-lg" href="tienda.html" role="button">Ir a Tienda</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="{% static "img/fundacion_01.jpg" %} " class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nueva Fundación</h5>
-              <p class="card-text">Nos hemos hecho amigos de una nueva fundación, la cual recibira
-                parte de nuestras ganancias, las cuales iran en ayuda de compra de alimentos para animales
-              en codicion de calle. Haz tu aporte voluntario en la sección Donaciones, muchos animalitos te lo agradeceran.
-              <br>
-              <a href="donaciones.html" class="card-link">Donaciones</a> </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="{% static "img/nosotros_01.jpg" %} " class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Sobre Nosotros </h5>
-              <p class="card-text">Somos una empresa sin fines de lucros , que con nuestras ganancias ayudamos a fundaciones 
-                animalistas, con el objetivo de que puedan tener los recursos para rescatar y mantener aniamles de situación de calle.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="{% static "img/donaciones_02.jpg" %} " class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">¿Quieres hacer un aporte voluntario?</h5>
-              <p class="card-text">Acá estan nuestros datos:
-                <ol>Banco Estado</ol>
-                <ol>Cuenta Rut</ol>
-                <ol>18.223.134-4</ol>
-                <ol>cheemsmarket@gmail.com</ol>
-                <a href="donaciones.html">Haz tu aporte</a>
-
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      </div>
-
-      <div class="card text-center">
-        <div class="card-header">
-          Actulizaciones
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Ultimas Alianzas</h5>
-          <p class="card-text">Fundacion Unidad de Protección Animal</p>
-          <a href="donaciones.html" class="btn btn-primary">Ir Donaciones</a>
-        </div>
-        <div class="card-footer text-muted">
-          Actualizado hace 1 día
-        </div>
-      </div>
-      <br>
-      <!--UBICACION-->
-    <h1 class="display-5 bg- text-center text-black p-6""><strong class="justify-content-center">Encuéntranos</strong> </h1>
-      <br>
-    <center>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.077690870305!2d-70.65978848487063!3d-33.44728238077488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c507f91be917%3A0xcfac72a68dd4b986!2sDuoc%20UC%20-%20Sede%20Padre%20Alonso%20de%20Ovalle!5e0!3m2!1ses!2scl!4v1649350072384!5m2!1ses!2scl" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </center>
-      
+  </div>    
+    
       <!--FOOTER-->
       <footer class="bg-light text-center blank mx-2 ">
         <div class="container p-4 pb-0">

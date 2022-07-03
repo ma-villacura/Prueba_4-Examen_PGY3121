@@ -11,14 +11,14 @@ from .serializers import FundacionSerializer, ProductoSerializers
 @csrf_exempt
 @api_view(['GET', 'POST'])
 def lista_productos(request):
-    """
+    """ decorators-- modificador de acciones
     GET = lista todos los productos
     POST = Agrega registro
     """
     
     if request.method == 'GET':
-        Producto = Producto.objects.all()
-        serializer = ProductoSerializers(Producto, many=True)
+        producto = Producto.objects.all()
+        serializer = ProductoSerializers(producto, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         data = JSONParser().parse(request)
@@ -37,8 +37,8 @@ def lista_fundacion(request):
     """
     
     if request.method == 'GET':
-        Fundacion = Fundacion.objects.all()
-        serializer = FundacionSerializer(Producto, many=True)
+        fundacion = Fundacion.objects.all()
+        serializer = FundacionSerializer(fundacion, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         data = JSONParser().parse(request)

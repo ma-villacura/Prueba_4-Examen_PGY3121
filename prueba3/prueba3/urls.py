@@ -17,12 +17,13 @@ from xml.etree.ElementInclude import include
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from core.views import index, nosotros, tienda, contacto, donaciones, administrador, agregar_prod, modificar_prod, eliminar_prod,lista_personas,agregar_fundacion, admin_fund,modificar_fundacion,eliminar_fundacion 
+from core.views import index, inicio, nosotros, tienda, contacto, donaciones, administrador, agregar_prod, modificar_prod, eliminar_prod,lista_personas,agregar_fundacion, admin_fund,modificar_fundacion,eliminar_fundacion , registrarse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('index.html', index, name="index"),
+    path('inicio.html', inicio, name="inicio"),
     path('nosotros.html', nosotros,name="nosotros"),
     path('tienda.html', tienda,name="tienda"),
     path('contacto.html', contacto,name="contacto"),
@@ -37,5 +38,6 @@ urlpatterns = [
     path('admin_fund',admin_fund,name="admin_fund"),
     path('modificar_fundacion/<id>',modificar_fundacion,name="modificar_fundacion"),
     path('eliminar_fundacion /<id>',eliminar_fundacion ,name="eliminar_fundacion "),
+    path('registrarse.html',registrarse ,name="registrarse "),
 ]
 
