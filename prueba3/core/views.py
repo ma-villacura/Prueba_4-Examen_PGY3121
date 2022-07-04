@@ -57,6 +57,8 @@ def donaciones(request):
         'fundaciones':fundaciones
     }
 
+
+
     return render(request, 'core/donaciones.html', data)
 
 def registrarse(request):

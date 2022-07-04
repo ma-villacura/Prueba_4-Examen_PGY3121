@@ -55,13 +55,19 @@
                             
                     </div>
 
-                    <input type="submit" class="btn btn-danger" id="enviar" value="Enviar"/>
+                    <input type="submit" class="btn btn-danger" id="enviar" value="Registrarse"/>
                     <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar"/>
                     <!-- <button href="{% url 'administrador' %} " type="button" class="btn btn-primary" id="volver" value="Regresar" /> -->
                 </form>
                 <div class="alert alert-success" role="alert">{{ mensaje }}</div>
             </div>
-            <a href="/administrador">Volver a Listado</a>
+            <form class="d-flex pt-1">
+              
+                <ol>
+                  <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesion</a>
+                  <a href="{% url 'index' %}" class="btn btn-success">Volver Inicio</a>
+                </ol>
+            </form>
         </div>
     </body>
 </html>
